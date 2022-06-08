@@ -1,0 +1,165 @@
+{% style %}
+
+    h1{
+        color: {{settings.primary-color}};
+    }
+    .hero-bg{
+ 
+        background-color: {{section.settings.colorBG}};
+        display: flex;
+
+        align-items: {{section.settings.v-alignment}};
+        text-align: {{section.settings.h-alignment}};
+    }
+    .padding-title{
+       padding-top: {{section.settings.padding-top}}px !important;
+       padding-bottom: {{section.settings.padding-bottom}}px !important;
+    }
+    .padding-button{
+        padding-top: {{section.settings.padding-top-btn}}px !important;
+       padding-bottom: {{section.settings.padding-bottom-btn}}px !important;
+    }
+{% endstyle %}
+
+
+
+<section class="inner-hero-section vh-100 hero-bg">
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-6 col-md-10 mx-auto">
+            <h1 class="padding-title">{{ section.settings.title}}</h1>
+            <p>{{section.settings.description}}</p>
+            <div class="padding-button">
+            <a href="{{section.settings.button_link}}" class="btn btn-secondary">{{section.settings.button_label}}</a>
+        </div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+{% schema %}
+{
+    "name" : "Hero",
+    "class" : "hero-section",
+    "settings": [
+    {
+        "type": "color_background",
+        "id": "colorBG",
+        "default": "#ffffff", 
+        "label": "Heading background"
+    },
+    {
+        "type": "range",
+        "id": "padding-top",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "label": "Padding top for the heading",
+        "default": 15
+    },
+    {
+        "type": "range",
+        "id": "padding-bottom",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "label": "Padding bottom for the heading",
+        "default": 15
+    },
+    {
+        "type": "range",
+        "id": "padding-top-btn",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "label": "Padding top for the button",
+        "default": 15
+    },
+    {
+        "type": "range",
+        "id": "padding-bottom-btn",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "label": "Padding bottom for the button",
+        "default": 15
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "default": "Example Heading", 
+        "label": "Heading title"
+    },
+    {
+        "type": "richtext",
+        "id": "description",
+        "default": "<p>Example paragraph</p>", 
+        "label": "Heading description"
+    },
+    {
+        "type" : "text",
+        "id" : "button_label",
+        "default": "Button", 
+        "label" : "Heading button label"
+    },
+    {
+        "type" : "url",
+        "id" : "button_link",
+        "label" : "Heading button link"
+    },
+    {
+        "type": "select",
+        "id": "h-alignment",
+        "label": "Horizontal alignment",
+        "options": [
+        {
+          "value": "center",
+          "label": "Centered"
+        },
+        {
+          "value": "left",
+          "label": "Left aligned"
+        },
+        {
+          "value": "right",
+          "label": "Right aligned"
+        },
+        {
+          "value": "justify",
+          "label": "Justified"
+        }
+        ],   "default": "center"
+    } ,
+    {
+        "type": "select",
+        "id": "v-alignment",
+        "label": "Vertical alignment",
+        "options": [
+        {
+          "value": "center",
+          "label": "Middle"
+        },
+        {
+          "value": "start",
+          "label": "Top"
+        },
+        {
+          "value": "end",
+          "label": "Bottom"
+        }
+        ],   "default": "center"
+    }
+    ], 
+   "presets": [
+       {
+           "category": "Hero",
+           "name":"Simple Hero"
+       }
+   ]
+}
+{% endschema %}

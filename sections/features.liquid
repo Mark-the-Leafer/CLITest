@@ -1,0 +1,146 @@
+{% style %}
+    
+    .features-section{
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        grid-gap: 3%;
+    }
+    
+    .featured-item{
+        text-align: center;
+    }
+
+    .icon-wrapper svg{
+        max-width: 20%;
+        max-height: auto;
+    }
+{% endstyle %}
+
+<div class="section-container container-fluid">
+
+    <div class="section-heading col-lg-6 col-md-10 mx-auto">
+        <h2>{{ section.settings.section-title }}</h2>
+        <p>{{ section.settings.section-description }}</p>
+        <a href="{{section.settings.button-link}}" class="btn btn-secondary">{{section.settings.button-label}}</a>
+    </div>
+
+    <div class="features-section">
+        {% for item in section.blocks %}
+            <div class="card featured-item">
+                <div class="card-body">
+
+                    <div class="icon-wrapper">
+                    {% assign icon = item.settings.icon %}
+                    {% case icon %}
+                        {% when 'icon-world' %}
+                            {% render 'icon-world' %}
+                        {% when 'icon-lock' %}
+                            {% render 'icon-lock' %}
+                        {% when 'icon-book' %}
+                            {% render 'icon-book' %}
+                        {% when 'icon-money' %}
+                            {% render 'icon-money' %}
+                        {% else %}
+                    
+                        {% endcase %}
+                    </div>
+           <h4 class="card-title">{{ item.settings.feature-header }}</h4>
+           <p class="card-text">{{ item.settings.feature-description }}</p>
+           {{c}}
+            </div>
+        </div>
+         {% endfor %}
+    </div>
+
+</div>
+
+
+{% schema %}
+    {
+        "name":"Features",
+        "class":"page-section",
+
+        "settings":[
+            {
+               "type":"text",
+               "id":"section-title",
+               "default":"Benefits of our products",
+               "label":"Section title"
+            },
+            {
+                "type":"text",
+                "id":"section-description",
+                "default":"Find below the list of all the benefits you can take advantage",
+                "label":"Section description"
+            },
+            {
+                "type" : "text",
+                "id" : "button-label",
+                "default": "Button", 
+                "label" : "Heading button label"
+            },
+            {
+                "type" : "url",
+                "id" : "button-link",
+                "label" : "Heading button link"
+            }
+
+
+
+
+
+
+
+
+        ],
+        "blocks":[
+            {
+               "type":"Text",
+               "name":"feature-items-block",
+               "settings":[
+                  {
+                     "type":"text",
+                     "id":"feature-header",
+                     "label":"Feature header"
+                  }, 
+                  {
+                   "type":"text",
+                   "id":"feature-description",
+                   "label":"Feature description"
+                }, 
+                {
+                    "type": "select",
+                    "id": "icon",
+                    "label": "Feature icon",
+                    "options": [
+                    {
+                      "value": "icon-book",
+                      "label": "Book"
+                    },
+                    {
+                      "value": "icon-money",
+                      "label": "Money"
+                    },
+                    {
+                      "value": "icon-world",
+                      "label": "World"
+                    },
+                    {
+                      "value": "icon-lock",
+                      "label": "Lock"
+                    }
+                    ],   
+                    "default": "icon-world"
+                }
+               ]
+            }
+         ],
+        "presets":[
+            {
+               "category":"Product",
+               "name":"Features"
+            }
+         ]
+    }
+{% endschema %}

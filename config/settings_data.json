@@ -1,0 +1,95 @@
+{
+  "current": {
+    "primary-color": "#822020",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+        }
+      },
+      "165362591398eb1cf2": {
+        "type": "hero",
+        "settings": {
+          "colorBG": "#b3b0b0",
+          "padding-top": 15,
+          "padding-bottom": 15,
+          "padding-top-btn": 15,
+          "padding-bottom-btn": 15,
+          "title": "Example Heading",
+          "description": "<p>Example paragraph<\/p>",
+          "button_label": "Button",
+          "button_link": "shopify:\/\/pages\/feature-page",
+          "h-alignment": "center",
+          "v-alignment": "center"
+        }
+      },
+      "16545304687ef48795": {
+        "type": "spotlight",
+        "settings": {
+          "product": "kirby-and-the-forgotten-land",
+          "product-button": "Shop now",
+          "button-link": "shopify:\/\/products\/kirby-and-the-forgotten-land"
+        }
+      },
+      "165453051915cd9659": {
+        "type": "product",
+        "blocks": {
+          "ce500a18-53fa-46ce-9241-49347a1367e1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/coffee-shop.png",
+              "image-header": ""
+            }
+          },
+          "21554c04-a549-48b2-9d07-53e85b261761": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/online-store.png",
+              "image-header": ""
+            }
+          },
+          "fdbdc320-11fa-4662-971e-7f4c0b8d9d52": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/shop.png",
+              "image-header": ""
+            }
+          }
+        },
+        "block_order": [
+          "ce500a18-53fa-46ce-9241-49347a1367e1",
+          "21554c04-a549-48b2-9d07-53e85b261761",
+          "fdbdc320-11fa-4662-971e-7f4c0b8d9d52"
+        ],
+        "settings": {
+          "section-title": "Example section title",
+          "font-size": 45,
+          "description": "<p>Lorem ipsum dolor amet si<\/p>",
+          "article-image": "shopify:\/\/shop_images\/vintage-blue-robot-portrait.jpg",
+          "colorPrimary": "#822020",
+          "colorSecondary": "#000000",
+          "show_available": true,
+          "h-alignment": "left",
+          "v-alignment": "start"
+        }
+      },
+      "spotlight": {
+        "type": "spotlight",
+        "settings": {
+          "product": "",
+          "product-button": "See more",
+          "button-link": ""
+        }
+      }
+    },
+    "content_for_index": [
+      "165362591398eb1cf2",
+      "16545304687ef48795",
+      "165453051915cd9659"
+    ]
+  },
+  "presets": {
+    "Default": {
+    }
+  }
+}

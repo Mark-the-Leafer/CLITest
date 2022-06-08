@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "spotlight",
+      "settings": {
+        "product": "assassin-s-creed-valhalla",
+        "product-button": "Shop now",
+        "button-link": "shopify:\/\/products\/assassin-s-creed-valhalla"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

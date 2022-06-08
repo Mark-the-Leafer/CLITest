@@ -1,0 +1,177 @@
+{% style %}
+    .section-container{
+      display: flex;
+      background-image: url({{section.settings.article-image | img_url:'master'}});
+      align-items: {{section.settings.v-alignment}};
+      text-align: {{section.settings.h-alignment}};
+
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .primary-font{
+      color: {{section.settings.colorPrimary}};
+      font-size: {{section.settings.font-size}}px;
+    }
+    .secondary-color{
+      color: {{section.settings.colorSecondary}};
+    }
+
+    .images-container{
+      display:flex;
+    }
+
+    .card-image{
+      display: flex;
+    flex-direction: column;
+    margin: 5px;
+    align-items: flex-start;
+    text-align: center;
+    }
+
+    .card-image p{
+      min-width: 70%;
+    max-width: 70%;
+    }
+{% endstyle %}
+
+<div class="container-fluid vh-100 py-5 section-container">
+   <div class="col-lg-6 col-md-10 mx-auto">
+<h2 class="primary-font">{{section.settings.section-title}}</h2>
+
+<div class="secondary-color">{{section.settings.description}}</div>
+
+{%if section.settings.show_available == true %}
+<h2 class="primary-font">Available in</h2>
+
+<div class="images-container">
+{% for item in section.blocks %}
+   <div class=card-image>
+  <img class="img-thumbnail" src="{{item.settings.image | img_url:'small'}}"/>
+<p>{{ item.settings.image-header }}</p>
+   </div>
+{% endfor %}
+</div>
+{% endif %}
+
+</div>
+</div>
+
+{% schema %}
+{
+  "name":"Collection",
+  "class":"page-section",
+  "settings":[
+     {
+        "type":"text",
+        "id":"section-title",
+        "default":"Example section title",
+        "label":"Section title"
+     },    
+     {
+      "type": "range",
+      "id": "font-size",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Font size for the headings",
+      "default": 25
+  }, 
+     {
+        "type":"richtext",
+        "id":"description",
+        "label":"Section description" 
+     },
+     {
+        "type":"image_picker",
+        "id":"article-image",
+        "label":"Section image"
+     },
+     {
+      "type": "color",
+      "id": "colorPrimary",
+      "default": "#000", 
+      "label": "Primary color"
+  },
+  {
+      "type": "color",
+      "id": "colorSecondary",
+      "default": "#000", 
+      "label": "Secondary color"
+   },
+   {
+      "type": "checkbox",
+      "id": "show_available",
+      "label": "Show available options",
+      "default": true
+    },
+   {
+      "type": "select",
+      "id": "h-alignment",
+      "label": "Horizontal alignment",
+      "options": [
+      {
+        "value": "center",
+        "label": "Centered"
+      },
+      {
+        "value": "left",
+        "label": "Left aligned"
+      },
+      {
+        "value": "right",
+        "label": "Right aligned"
+      },
+      {
+        "value": "justify",
+        "label": "Justified"
+      }
+      ],   "default": "center"
+  },
+  {
+      "type": "select",
+      "id": "v-alignment",
+      "label": "Vertical alignment",
+      "options": [
+      {
+        "value": "center",
+        "label": "Middle"
+      },
+      {
+        "value": "start",
+        "label": "Top"
+      },
+      {
+        "value": "end",
+        "label": "Bottom"
+      }
+      ],   "default": "center"
+  }
+  ],
+  "blocks":[
+     {
+        "type":"image",
+        "name":"image-block",
+        "settings":[
+           {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Available options"
+           }, 
+           {
+            "type":"text",
+            "id":"image-header",
+            "label":"Image header"
+         }
+        ]
+     }
+  ],
+  "presets":[
+     {
+        "category":"Product",
+        "name":"Aditional info view"
+     }
+  ]
+}
+{% endschema %}

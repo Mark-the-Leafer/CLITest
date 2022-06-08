@@ -1,0 +1,64 @@
+{
+  "sections": {
+    "heading": {
+      "type": "hero",
+      "settings": {
+        "colorBG": "#ffffff",
+        "padding-top": 0,
+        "padding-bottom": 0,
+        "padding-top-btn": 0,
+        "padding-bottom-btn": 0,
+        "title": "Example Heading",
+        "description": "<p>Example paragraph<\/p>",
+        "button_label": "Button",
+        "button_link": "",
+        "h-alignment": "center",
+        "v-alignment": "center"
+      }
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "f18361c6-bfbe-49fc-92f3-ed37ce7f62c4": {
+          "type": "Text",
+          "settings": {
+            "feature-header": "Feature 1",
+            "feature-description": "Description for the feature 1",
+            "icon": "icon-lock"
+          }
+        },
+        "afd38626-b7da-446f-8cf5-7cd6aa9d0ce1": {
+          "type": "Text",
+          "settings": {
+            "feature-header": "Feature 2",
+            "feature-description": "Feature description 2",
+            "icon": "icon-book"
+          }
+        },
+        "46118fb5-0ad2-4fdb-bbce-3d13ef1362d5": {
+          "type": "Text",
+          "settings": {
+            "feature-header": "Feature 3",
+            "feature-description": "Feature description 3",
+            "icon": "icon-world"
+          }
+        }
+      },
+      "block_order": [
+        "f18361c6-bfbe-49fc-92f3-ed37ce7f62c4",
+        "afd38626-b7da-446f-8cf5-7cd6aa9d0ce1",
+        "46118fb5-0ad2-4fdb-bbce-3d13ef1362d5"
+      ],
+      "settings": {
+        "section-title": "Benefits of our products",
+        "section-description": "Find below the list of all the benefits you can take advantage",
+        "button-label": "Button",
+        "button-link": ""
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "features"
+  ]
+}
