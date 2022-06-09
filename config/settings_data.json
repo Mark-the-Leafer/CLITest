@@ -80,12 +80,18 @@
           "product-button": "See more",
           "button-link": ""
         }
+      },
+      "16548090014e148763": {
+        "type": "card-section",
+        "settings": {
+        }
       }
     },
     "content_for_index": [
       "165362591398eb1cf2",
       "16545304687ef48795",
-      "165453051915cd9659"
+      "165453051915cd9659",
+      "16548090014e148763"
     ]
   },
   "presets": {
