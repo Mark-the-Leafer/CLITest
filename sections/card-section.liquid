@@ -1,0 +1,20 @@
+
+{% assign c = collections.all.products %}
+{% render 'card-test' with c %}
+
+
+{% schema %}
+{
+  "name": "Card",
+  "class": "card-section",
+  "settings": [
+
+  ],
+  "presets": [
+    {
+      "category": "Card",
+      "name": "Cards dynamic"
+    }
+  ]
+}
+{% endschema %}
